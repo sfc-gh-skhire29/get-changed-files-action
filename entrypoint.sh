@@ -23,5 +23,5 @@ MODIFIED_FILES_sql=$(git diff --name-only $2 $3 | grep -E "(${format_sql})")
 echo "Modified python files: "$MODIFIED_FILES_python
 echo "Modified sql files: "$MODIFIED_FILES_sql
 
-echo "::set-output name=python_changed_files::$MODIFIED_FILES_python"
+echo "::set-output name=python_changed_files::"(${MODIFIED_FILES_python})""
 echo "::set-output name=sql_changed_files::$MODIFIED_FILES_sql"
