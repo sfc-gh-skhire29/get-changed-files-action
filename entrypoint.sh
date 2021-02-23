@@ -13,7 +13,7 @@ echo $3
 
 git fetch origin $2:$2
 git fetch origin $3:$3
-MODIFIED_FILES_python=$(git diff --name-only $2 $3 | grep -E "(${format_py})")
+MODIFIED_FILES_python="$(git diff --name-only $2 $3 | grep -E "(${format_py})")"
 MODIFIED_FILES_sql=$(git diff --name-only $2 $3 | grep -E "(${format_sql})")
 
 # head=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
