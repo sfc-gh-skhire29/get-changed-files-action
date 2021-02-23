@@ -1,0 +1,39 @@
+name: Path of Changed files
+description: Find files with extension .py, .sql that are changed on the next branch 
+author: sarveshkhire
+
+inputs:
+  token:
+    description: GITHUB_TOKEN or a repo scoped PAT
+    required: true
+    default: ${{ github.token }}
+  head_branch:
+    description: Head branch/ source branch
+    required: true
+    default: ${{ github.head_ref }}
+  target_branch:
+    description: Target branch
+    required: true
+    default: ${{ github.base_ref }}
+  files:
+    description: List of files to check for changes.
+    required: false
+
+outputs:
+  python_changed_files:
+    description: List of changed python files
+  sql_changed_files:
+    description: List of changed sql files  
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.token }}
+    - ${{ inputs.head_branch }}
+    - ${{ inputs.target_branch }}
+    - ${{ inputs.files }}
+   
+branding: 
+  icon: check-square
+  color: white
