@@ -26,4 +26,4 @@ echo "Modified sql files: "$MODIFIED_FILES_sql
 
 
 echo "::set-output name=python_changed_files::$(echo $MODIFIED_FILES_python)"
-echo "::set-output name=sql_changed_files::${MODIFIED_FILES_sql}"
+echo "::set-output name=sql_changed_files::$(echo $MODIFIED_FILES_sql)"
