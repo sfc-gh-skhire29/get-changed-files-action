@@ -15,11 +15,8 @@ echo $3
 git fetch origin $2:$2
 git fetch origin $3:$3
 
-git checkout $2  # checkout to head
-git rebase $3    # rebase main
-
-MODIFIED_FILES_python=$(git diff --name-only $2 $3 | grep -E "(${format_py})")
-MODIFIED_FILES_sql=$(git diff --name-only $2 $3 | grep -E "(${format_sql})")
+MODIFIED_FILES_python=$(git diff --name-only $2 $(git merge-base $2 $3) | grep -E "(${format_py})")
+MODIFIED_FILES_sql=$(git diff --name-only $2 $(git merge-base $2 $3) | grep -E "(${format_sql})")
 
 # head=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
 # MODIFIED_FILES_python=$(git diff --name-only $head main | grep -E "(${format_py})")
