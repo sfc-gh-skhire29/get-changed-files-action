@@ -1,5 +1,5 @@
 name: Path of Changed files
-description: Find files with extension .py, .sql that are changed on the next branch 
+description: Find files with extension .py, .sql, .txt that are changed on the next branch 
 author: sarveshkhire
 
 inputs:
@@ -25,7 +25,7 @@ outputs:
   sql_changed_files:
     description: List of changed sql files  
   txt_changed_files:
-    description: List of all changed txt files
+    description: List of all changed text files
 
 runs:
   using: 'docker'
