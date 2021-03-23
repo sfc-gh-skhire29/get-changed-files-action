@@ -24,6 +24,8 @@ outputs:
     description: List of changed python files
   sql_changed_files:
     description: List of changed sql files  
+  txt_changed_files:
+    description: List of all changed txt files
 
 runs:
   using: 'docker'
