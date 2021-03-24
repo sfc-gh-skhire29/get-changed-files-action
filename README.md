@@ -14,3 +14,6 @@ Currently supporting:
  -   Changed .sql files		(outputs.sql_changed_files) 
  -   Changed .py files		(outputs.python_changed_files)
  -  Changed .txt files		(outputs.txt_changed_files)
+
+
+uses: sfc-gh-skhire29/get-changed-files-action@v1.0
